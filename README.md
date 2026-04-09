@@ -16,10 +16,15 @@
 # Đảm bảo tường lửa trên Ubuntu đã cho phép các cổng 80, 1880, 9630 (Lệnh: sudo ufw allow ...)
 <img width="508" height="300" alt="image" src="https://github.com/user-attachments/assets/044845df-0282-42dd-9882-1c8a5a050fe9" />
 # C. Cấu hình docker compose
-
-
-
-
+# 1.Tạo thư mục: ~/myapp. chuyển vào thư mục ~/myapp
+<img width="523" height="123" alt="image" src="https://github.com/user-attachments/assets/8d97be0f-3d78-41d8-94b4-ff222712e6b9" />
+# 2. Tạo file ./myweb/index.html 
+<img width="1100" height="638" alt="image" src="https://github.com/user-attachments/assets/afbc74f4-34da-4c90-bdd0-63da6642aea3" />
+# Tạo file docker-compose.yml 
+<img width="1100" height="640" alt="image" src="https://github.com/user-attachments/assets/fd8dd09e-ec06-4a73-a0b8-21f540519a06" />
+# Edit file ./nginx/nginx.conf
+<img width="1112" height="635" alt="image" src="https://github.com/user-attachments/assets/23787bd7-d5f3-4d66-988c-8ca30aa4ee94" />
+# Chạy docker-compose lần đầu để Node-RED tự sinh file cấu hình trong thư mục ./nodered, sau đó mới tiến hành sửa settings.js và restart lại container
 
 
 
