@@ -31,4 +31,21 @@
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/f4feea09-757c-4042-813d-4da25e0426bd" />
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/d2e484c9-a8c8-4919-b331-0206bbe2a582" />
 ## đã ok 
-
+# trả lời câu hỏi 
+# 1:Tại sao dùng Nginx Reverse Proxy thay vì trỏ thẳng Tunnel vào Node-RED? 
+## vì Nginx điều phối nhiều service, dễ cấu hình route, tăng bảo mật( ẩn backend). Nếu trỏ thẳng chỉ expose được 1 server, khó quản lý 
+# 2: Sự khác biệt giữa việc Mount file và Mount thư mục trong Docker là gì?
+## mount file: gắn 1 fil cụ thể còn mount folder: gắn cả thư mục. khác biệt: file chỉ chứa 1 file config, folder: sync toàn bộ code và data 
+# 3: Nếu thay đổi file index.html ở máy Ubuntu, nội dung trên web có thay đổi ngay không? Tại sao?
+## có. vì Docker đang đọc trực tiếp từ máy host, không cần rebuild container 
+# 4: docker-compose.yml khai báo các services có phần restart: always hoặc restart: unless-stopped : chúng để làm gì?
+## Tự động restart container khi: bị crash, reboot máy.
+# 5. Cách khai báo để tất cả các services đều dùng chung 1 network? lợi ích của việc khai báo này là gì? Sửa đổi file docker-compose để tất cả các service đều dùng chung 1 network?
+## dùng chung lợi ích container giao tiếp bằng tên, không cần IP, Tăng bảo mật và dễ quản lý.
+# 6:Tìm cách đưa Cloudflare Token vào trong file .env rồi sau đó thêm .env vào file .gitignore trước khi push code lên github. Tại sao nói đây là điều quan trọng về bảo mật mã nguồn?
+## vì token là thông tin nhạy cảm. nếu push lên githup người khác sẽ dùng được tunnel của mình và có thể chiếm quyền truy cập 
+## .env giúp tách config khỏi code và giúp bảo mật.
+# 7: Tại sao chúng ta nên thêm hậu tố :ro khi mount file cấu hình Nginx?
+## vì nó giúp container không được sửa config tránh bị hack và lỗi ghi đè.
+# 8: Khi dùng Cloudflare Tunnel: có cần thiết phải mở cổng cho các service nữa không?
+## không cần vì tunnel tạo kết nối outbound, cloudflare truy cập qua tunnel giúp an toàn hơn.
