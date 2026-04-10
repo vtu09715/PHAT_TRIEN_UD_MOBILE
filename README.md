@@ -58,13 +58,34 @@
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/b8d3faf1-75b9-4471-9eaf-1d9f72676ee1" />
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/79d4c564-375d-42ca-b0e1-c69e5cef7891" />
 # E. Triển khai (level test) ứng dụng
-
-
-
-
-
-
-
+# 1.Chuyển vào trong thư mục ~/myapp Gõ lệnh để docker compose chạy: sẽ run tất cả các service khai báo trong file docker-compose.yml
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/653ddcc3-80f1-4d89-80cf-62a64f8088af" />
+# 2.Kiểm tra các container đang chạy trong docker, nếu có cái nào bị restart cần tìm lỗi rồi edit lại docker-compose.yml
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/3aa2eb76-3b27-41a9-96b2-834dfa0bb717" />
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/1e4ce1b6-387f-4018-98fe-a134207c6c86" />
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/c13e1087-e822-425e-9589-342fd14bffae" />
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/3586c432-3c8c-4650-842a-2f1d605f8358" />
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/c2b96c2d-7eb3-4809-9d36-f8ff1be103ad" />
+# 3.Sử dụng nodered: kéo nodered http_in , http_response, function : để tạo api get đơn giản (dùng cho /api proxy_pass của nginx)
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/a2a879b0-5f06-46e5-9547-3f30e4ed9514" />
+# 4.Sửa file ./myweb/index.html : thêm code html+js để sử dụng được api đã khai báo proxy_pass (thực ra là sử dụng nodered http_in hoặc sử dụng service myapi)
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/8d3dddb7-e6f4-41eb-a141-284762897c90" />
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/92742438-9a20-4b6a-8cf4-46cac8da3234" />
+# F.Sửa lỗi 
+# 1.nếu có lỗi xẩy ra trong quá trình triển khai docker compose up -d
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/ac4bb740-858c-4df8-8859-ca5884770867" />
+# 2.Thêm healthcheck cho myapi trong file docker-compose.yml
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/4e4c3985-3bb0-48c5-acf3-d35250ef202d" />
+# Cài curl trong image myapi
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/b817a856-45ff-4e7e-84f4-464cc10309d2" />
+# Build lại sau khi thêm healthcheck
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/3bd1a011-eb03-4da3-8704-677b891ac826" />
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/661ac742-fff3-4f4d-980f-cc03c91310b5" />
+# 3.giới hạn resource cho một service: (tránh việc 1 service chiếm quá nhiều ram)
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/775e0639-4de8-49b6-ba05-c6ed8c017a31" />
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/e3742916-1f3e-4ef5-a753-3b0e06ffb3fc" />
+# G. Triển khai ứng dụng đến End-user
+# 1.Trong Cloudflare: Tạo tunnel (đường hầm), chọn loại triển khai cho docker
 
 
 
